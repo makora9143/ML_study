@@ -33,6 +33,7 @@ end
 plot(x, y, 'rx', 'MarkerSize', 8);
 xlabel('xlabel');
 ylabel('ylabel');
+
 pause;
 
 fprintf('Caliculated theta\n');
