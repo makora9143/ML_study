@@ -14,7 +14,8 @@ X = np.c_[np.ones((m, 1)), x]
 alpha = 0.005
 iterations = 100
 
-print('initialize theta', theta)
+print 'initialize theta'
+print theta
 theta = np.array([[1.], [1.]])
 
 for i in xrange(iterations):
@@ -24,7 +25,8 @@ for i in xrange(iterations):
     ])
     theta = temp
 
-print('Calculated theta: ', theta)
+print 'Calculated theta'
+print theta
 
 plt.plot(x, y, 'rx')
 plt.plot(X[:, 1], X.dot(theta), 'b-')
