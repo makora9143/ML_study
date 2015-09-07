@@ -1,14 +1,11 @@
-# your original data
+# Training set
 x = [1:10]'
 y = [2; 4; 6; 28; 39; 64; 123; 213; 313; 424]
 
 
-# create the design matrix
-# intercept (1s), day and humidity as predictors
+# Design Matrix
 m = length(x)
 X = [ones(m, 1) x x.^2]
-# linear parameter estimates
-
 
 # Parameter
 alpha = 0.0005;
@@ -29,23 +26,20 @@ for iter = 1:iterations
   theta = temp;
 
   # Plot every line
-  plot(x, X * theta, 'b-');
-  hold on;
+  # plot(x, X * theta, 'b-');
+  # hold on;
  
 end
 
 # Plot Dataset
 plot(x, y, 'rx');
-#xlabel('xlabel');
-#ylabel('ylabel');
 
 fprintf('Caliculated theta\n');
 theta
-hold on;
+hold on; 
 
 # Plot Linear Regression
 plot(X(:, 2), X * theta, 'r-', 'linewidth', 2.0)
-# legend('Training Data', 'Linear Regression')
 hold off;
 
 pause;
