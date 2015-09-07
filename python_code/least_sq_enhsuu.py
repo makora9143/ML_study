@@ -11,15 +11,14 @@ y = np.array([5.5, 1.7, 7.2, 8.3, 5.7, 1.1, 4.1, 6.7, 5.0, 6.6, 6.3, 5.6, 8.7, 3
 m = x.size
 X = np.c_[np.ones((m, 1)), x]
 
-theta = np.array([[1.], [1.]])
-
+theta = np.linalg.inv((X.T.dot(X))).dot(X.T.dot(y))
 
 plt.plot(x, y, 'rx')
+plt.plot(X[:, 1], X.dot(theta), 'b-')
+
 plt.xlabel('xlabel')
 plt.ylabel('ylabel')
-
-plt.plot(X[:, 1], X.dot(theta), 'b-')
-plt.legend('Training data', 'Linear regression')
+plt.legend(('Training data', 'Linear regression'), loc='upper left')
 
 plt.show()
 
