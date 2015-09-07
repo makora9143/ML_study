@@ -14,7 +14,7 @@ X = np.c_[np.ones((m, 1)), x]
 alpha = 0.005
 iterations = 100
 
-print('initialize theta')
+print('initialize theta', theta)
 theta = np.array([[1.], [1.]])
 
 for i in xrange(iterations):
@@ -24,14 +24,13 @@ for i in xrange(iterations):
     ])
     theta = temp
 
-plt.plot(x, y, 'rx')
-plt.xlabel('xlabel')
-plt.ylabel('ylabel')
-
 print('Calculated theta: ', theta)
 
+plt.plot(x, y, 'rx')
 plt.plot(X[:, 1], X.dot(theta), 'b-')
-plt.legend('Training Data, Linear Regression')
+plt.xlabel('xlabel')
+plt.ylabel('ylabel')
+plt.legend(('Training Data', 'Linear Regression'), loc='upper left')
 
 plt.show()
 
