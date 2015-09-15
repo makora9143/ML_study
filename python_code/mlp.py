@@ -55,7 +55,7 @@ def main():
     layers = [
         Layer(784, 500, activation),
         # Layer(500, 500, activation),
-        Layer(500, 500, activation),
+        # Layer(500, 500, activation),
         Layer(500, 10, T.nnet.softmax)
     ]
 
@@ -120,7 +120,7 @@ def main():
     fig = plt.figure(figsize=(6, 6))
     for i in range(36):
         ax = fig.add_subplot(6, 6, i + 1, xticks=[], yticks=[])
-        plot_sample(mnist_x[numpy.random.randint(0,60000)], ax)
+        plot_sample(mnist_x[np.random.randint(0,60000)], ax)
 
 
 if __name__ == '__main__':
